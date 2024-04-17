@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Calculadora</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        #res{
+            margin-top: 28px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="n1" id="n1">
+    <input type="number" name="n2" id="n2">
+    <input type="button" value="Somar" onclick="somar()"> 
+    <div id="res"> Resultado: </div>
+
+    <script>
+        function somar(){
+            //pegar os elementos 
+            var n1 = document.getElementById('n1');
+            var n2 = document.querySelector('input#n2');
+            var resposta = document.getElementById('res');
+            //converter os elementos em numero pois input sempre retorna uma string
+            var num1 = Number(n1.value);
+            var num2 = Number(n2.value);
+            //fazer a lógica 
+            var soma = num1 + num2;
+            resposta.innerHTML = `A soma de ${num1} com ${num2} é <strong>${soma}</strong> `;
+        }   
+    </script>
+</body>
+</html>
